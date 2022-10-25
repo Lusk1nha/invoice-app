@@ -1,10 +1,19 @@
-
 import { Home } from "./pages/Home";
+import { Navbar } from './pages/Navbar/index';
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Routes } from "react-router";
 
 export default function App() {
   return (
-    <div className="w-screen h-screen">
-      <Home />
+    <div className="bg-white dark:bg-black w-screen h-screen flex flex-col md:flex-row transition duration-200">
+      <Navbar />
+
+      <Router>
+        <Routes>
+          <Route path="/" index element={<Home />} />
+        </Routes>
+      </Router>
     </div>
   )
 };
