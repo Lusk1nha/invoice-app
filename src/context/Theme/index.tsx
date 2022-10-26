@@ -1,5 +1,5 @@
 import { createContext, useCallback, useEffect, useState } from "react";
-import { ThemeProviderProps } from "../../shared/props/ThemeProviderProps";
+import { ThemeProviderProps } from "./ThemeProviderProps";
 import { ThemeContextProps } from './ThemeContextProps';
 
 export const ThemeContext = createContext<ThemeContextProps | null>(null);
