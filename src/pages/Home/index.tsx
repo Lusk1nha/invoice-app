@@ -1,24 +1,17 @@
-import { NewInvoiceButton } from "../../components/Buttons/NewInvoiceButton";
+import { Tooltip } from "../../components/Tooltip";
+import { InvoiceItem } from './../../components/InvoiceItem';
+
 
 export function Home() {
-  return(
+  return (
     <div className="flex grow justify-center">
-      <section className="flex flex-col grow p-6 pt-8">
-        <header className="flex items-center w-full h-11">
-          <div className="w-full">
-            <h4 className="w-auto font-bold text-[20px]">Invoices</h4>
-            <p className="text-xs text-coolGrey">7 invoices</p>
-          </div>
-
-          <div className="mr-4">
-            Filter
-          </div>
-          <div>
-            <NewInvoiceButton />
-          </div>
+      <section className="flex flex-col grow p-6 pt-8 md:pt-14 md:p-12">
+        <header className="flex items-center w-full h-11 md:h-[60px] mb-8">
+          <Tooltip />
         </header>
-        <main>
 
+        <main>
+          <InvoiceItem />
         </main>
       </section>
     </div>

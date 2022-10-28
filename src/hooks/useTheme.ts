@@ -13,8 +13,6 @@ export default function useTheme() {
     rootElement.classList.remove(currentColorTheme);
     rootElement.classList.add(theme);
 
-    console.log('here 2')
-
     localStorage.setItem('theme', theme)
   }, [theme, currentColorTheme]);
 
