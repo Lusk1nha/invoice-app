@@ -1,8 +1,11 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 * {
-  font-family: 'Spartan';
+  font-family: 'Spartan', sans-serif;
   font-weight: 500;
+
+  box-sizing: border-box
 }
+
+@tailwind utilities;

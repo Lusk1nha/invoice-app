@@ -1,11 +1,11 @@
-import { LogoButton } from "../../components/Buttons/LogoButton";
-import { ThemeButton } from "../../components/Buttons/ThemeButton";
+import { LogoButton } from "../../components/Buttons/components/LogoButton";
+import { ThemeButton } from "../../components/Buttons/components/ThemeButton";
 
-import { AvatarButton } from '../../components/Buttons/AvatarButton/index';
+import { AvatarButton } from '../../components/Buttons/components/AvatarButton/index';
 
 export function Navbar() {
   return (
-    <nav className="w-full lg:w-[103px] h-72 md:h-[80px] lg:h-full bg-tealishBlue-600 flex lg:flex-col lg:rounded-r-[20px] transition">
+    <nav className="w-full lg:w-[103px] h-72 md:h-[80px] lg:h-full bg-tealishBlue-600 dark:bg-yankeesBlue-600 flex lg:flex-col lg:rounded-r-[20px] transition">
       <section className="grow flex justify-between items-center lg:flex-col pr-5 lg:pb-6 lg:pr-0">
         <div className="w-72 md:w-[80px] lg:w-[103px] h-full lg:h-[103px]">
           <LogoButton />
