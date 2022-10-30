@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { FilterButton } from "../Buttons/components/FilterButton";
 import { NewInvoiceButton } from "../Buttons/components/NewInvoiceButton";
+import { TotalInvoices } from "./components";
 
 export function Tooltip() {
 
@@ -8,7 +9,7 @@ export function Tooltip() {
     <Fragment>
       <div className="w-full h-full">
         <h4 title="Invoices" aria-label="Invoices" className="w-auto font-bold text-[20px] md:text-[32px] text-chineseBlack dark:text-white">Invoices</h4>
-        <p aria-label="7 invoices" className="before:content-['7_invoices'] md:before:content-['There_are_7_total_invoices'] before:text-xs before:text-coolGrey-600 dark:before:text-lavender before:font-medium" />
+        <TotalInvoices total={50} />
       </div>
 
       <div className="flex justify-center items-center h-full mr-5">

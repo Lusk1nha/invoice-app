@@ -1,16 +1,18 @@
-import { InvoiceItem } from '../InvoiceItem';
+import { Fragment } from 'react';
+
 import { InvoiceListProps } from './../../shared/props/InvoiceListProps';
 
-export function InvoiceList({ invoices }: InvoiceListProps) {
-  const renderInvoicesItems = () => invoices.map(invoice => <InvoiceItem {...invoice} key={invoice.code} />)
+import { NothingFound } from './components';
+import { RenderInvoicesItems } from './components';
 
+export function InvoiceList({ invoices }: InvoiceListProps) {
   return (
-    <ul className="flex flex-col gap-y-4">
+    <Fragment>
       {
         invoices?.length > 0
-          ? renderInvoicesItems()
-          : null
+          ? <RenderInvoicesItems invoices={invoices} />
+          : <NothingFound />
       }
-    </ul>
+    </Fragment>
   );
 };

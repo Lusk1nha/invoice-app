@@ -3,6 +3,7 @@ import { Navbar } from './pages/Navbar/index';
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Routes } from "react-router";
+import { Modal } from "./components/Modal";
 
 export default function App() {
   return (

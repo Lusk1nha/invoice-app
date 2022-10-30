@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Option } from "./components/Option";
+
+import { Option } from "./components";
+
 import { CheckboxProps } from "./models/CheckboxProps";
 
 export function Checkbox({ options }: CheckboxProps) {
@@ -24,11 +26,11 @@ export function Checkbox({ options }: CheckboxProps) {
     if(a.order != null && b.order != null) {
       if(a.order < b.order) {
         return -1
-      }
+      };
 
       if(a.order > b.order) {
         return 1
-      }
+      };
 
       return 0
     };

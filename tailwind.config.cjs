@@ -33,7 +33,8 @@ module.exports = {
         'darkOrange': '#FF8F00',
         'darkOrangeTranslucid': '#ff8f0012',
         'charcoal': '#373B53',
-        'charcoalTranslucid': '#373b5329'
+        'charcoalTranslucid': '#373b5329',
+        'blackTranslucid': '#000000AF'
       },
       width: {
         '72': '4.5rem'

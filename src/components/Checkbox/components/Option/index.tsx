@@ -1,5 +1,5 @@
 import { FormEvent } from 'react';
-import { OptionProps } from './../models/OptionProps';
+import { OptionProps } from '../../models/OptionProps';
 
 export function Option({ text, value, checkedFn }: OptionProps) {
   const handleOptionChange = (event: FormEvent<HTMLInputElement>) => {

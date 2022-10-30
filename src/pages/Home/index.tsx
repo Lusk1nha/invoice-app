@@ -3,6 +3,8 @@ import { InvoiceList } from './../../components/InvoiceList/index';
 
 import { InvoiceItemProps } from "../../shared/props/InvoiceItemProps";
 import { State } from "../../shared/enums/Status";
+import { Fragment } from "react";
+import { Modal } from "../../components/Modal";
 
 
 const InvoiceMockup: InvoiceItemProps[] = [
@@ -31,16 +33,20 @@ const InvoiceMockup: InvoiceItemProps[] = [
 
 export function Home() {
   return (
-    <div className="flex grow justify-center">
-      <section className="max-w-[480px] md:max-w-[900px] flex flex-col grow p-6 pt-8 md:pt-14 lg:pt-[72px] md:p-12">
-        <header className="flex items-center w-full h-11 md:h-[60px] mb-8 lg:mb-14">
-          <Tooltip />
-        </header>
+    <Fragment>
+      <div className="flex grow justify-center relative">
+        <section className="max-w-[480px] md:max-w-[900px] flex flex-col grow p-6 pt-8 md:pt-14 lg:pt-[72px] md:p-12">
+          <header className="flex items-center w-full h-11 md:h-[60px] mb-8 lg:mb-14">
+            <Tooltip />
+          </header>
 
-        <main>
-          <InvoiceList invoices={InvoiceMockup} />
-        </main>
-      </section>
-    </div>
+          <main className="grow">
+            <InvoiceList invoices={InvoiceMockup} />
+          </main>
+        </section>
+      </div>
+
+      <Modal />
+    </Fragment>
   );
 };
