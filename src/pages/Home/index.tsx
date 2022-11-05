@@ -45,8 +45,6 @@ export function Home() {
           </main>
         </section>
       </div>
-
-      <Modal />
     </Fragment>
   );
 };

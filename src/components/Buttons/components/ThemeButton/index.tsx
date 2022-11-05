@@ -1,9 +1,7 @@
-import MoonLogo from '../../../assets/icon-moon.svg';
-import SunLogo from '../../../assets/icon-sun.svg';
 import { SunSVG } from '../../../Icons/components/SunSVG';
+import { MoonSVG } from '../../../Icons/components/MoonSVG';
 
 import useTheme from '../../../../hooks/useTheme';
-import { MoonSVG } from '../../../Icons/components/MoonSVG';
 
 export function ThemeButton() {
   const [theme, setTheme] = useTheme();

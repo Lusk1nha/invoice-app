@@ -1,7 +1,6 @@
 import avatarImg from '../../../../assets/image-avatar.jpg';
 
 export function AvatarButton() {
-
   return (
     <button
       type="button"
