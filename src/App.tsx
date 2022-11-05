@@ -3,22 +3,28 @@ import { Navbar } from './pages/Navbar/index';
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Routes } from "react-router";
-import { Modal } from "./components/Modal";
-import useModal from './hooks/useModal';
+
 import { ModalProvider } from "./context/ModalProvider";
+import { FormRender } from "./components/Forms";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient()
 
 export default function App() {
   return (
-    <ModalProvider>
-      <div className="bg-ghostWhite dark:bg-eerieBlack w-screen h-screen flex flex-col lg:flex-row transition duration-200">
-        <Navbar />
+    <QueryClientProvider client={queryClient}>
+      <section className="bg-ghostWhite dark:bg-eerieBlack w-screen h-screen flex grow flex-col lg:flex-row transition duration-200">
+        <ModalProvider>
+          <Navbar />
 
-        <Router>
-          <Routes>
-            <Route path="/" index element={<Home />} />
-          </Routes>
-        </Router>
-      </div>
-    </ModalProvider>
+          <Router>
+            <Routes>
+              <Route path="/" index element={<Home />} />
+              <Route path="/new" element={<FormRender type={"NewInvoice"} />} />
+            </Routes>
+          </Router>
+        </ModalProvider>
+      </section>
+    </QueryClientProvider>
   )
 };

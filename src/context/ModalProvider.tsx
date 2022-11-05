@@ -20,8 +20,8 @@ export function ModalProvider({ children }: ModalProviderProps) {
 
   return (
     <ModalContext.Provider value={{ opened, setOpened, content, setContent }}>
-      <Modal on={opened}>{content}</Modal>
       {children}
+      <Modal on={opened} preventClickOutsideClosing>{content}</Modal>
     </ModalContext.Provider>
   )
 };

@@ -34,7 +34,8 @@ module.exports = {
         'darkOrangeTranslucid': '#ff8f0012',
         'charcoal': '#373B53',
         'charcoalTranslucid': '#373b5329',
-        'blackTranslucid': '#000000AF'
+        'blackTranslucid': '#000000AF',
+        'customGray': "#979797"
       },
       width: {
         '72': '4.5rem'
@@ -60,11 +61,16 @@ module.exports = {
       }
     },
     screens: {
+      sm: '0px',
       md: '768px',
       lg: '1440px'
     }
   },
   plugins: [
-    require('@savvywombat/tailwindcss-grid-areas')
+    require('@savvywombat/tailwindcss-grid-areas'),
+    require('tailwind-scrollbar')
   ],
+  variants: {
+    scrollbar: ['rounded']
+  }
 }

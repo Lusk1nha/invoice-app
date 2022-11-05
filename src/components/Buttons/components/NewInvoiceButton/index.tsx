@@ -1,7 +1,6 @@
 import { ButtonHTMLAttributes, useContext } from "react";
 
-import { Home } from "../../../../pages/Home";
-import { Form } from "../../../Form";
+import { FormRender } from "../../../Forms";
 import { PlusSVG } from "../../../Icons/components/PlusSVG";
 import { ButtonProps } from "../../models/ButtonProps";
 
@@ -12,7 +11,7 @@ export function NewInvoiceButton(props: ButtonProps & ButtonHTMLAttributes<HTMLB
   
   const handleClick = () => {
     modalContext.setOpened(true);
-    modalContext.setContent(<Form />)
+    modalContext.setContent(<FormRender type="NewInvoice" />)
   }
   
   return (
