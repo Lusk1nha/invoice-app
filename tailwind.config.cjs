@@ -35,7 +35,8 @@ module.exports = {
         'charcoal': '#373B53',
         'charcoalTranslucid': '#373b5329',
         'blackTranslucid': '#000000AF',
-        'customGray': "#979797"
+        'customGray': '#979797',
+        'lightSlateGray': '#777F98'
       },
       width: {
         '72': '4.5rem'
@@ -44,17 +45,23 @@ module.exports = {
         '72': '4.5rem'
       },
       gridTemplateAreas: {
-        'layout': [
+        'invoiceItem': [
           'code name',
           'date status',
           'price status',
+        ],
+        'fieldsFormOnSmartphone': [
+          'city postCode',
+          'country country'
         ]
       },
       gridTemplateColumns: {
-        'layout': '1fr 1fr',
+        'invoiceItem': '1fr 1fr',
+        'fieldsFormOnSmartphone': '1fr 1fr',
       },
       gridTemplateRows: {
-        'layout': `1fr 2fr`
+        'invoiceItem': `1fr 2fr`,
+        'fieldsFormOnSmartphone': '1fr 1fr'
       },
       backgroundImage: {
         'checkedImage': "url('/src/assets/icon-check.svg')"
