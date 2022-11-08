@@ -13,7 +13,7 @@ const queryClient = new QueryClient()
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <section className="bg-ghostWhite dark:bg-eerieBlack w-screen h-screen flex grow flex-col lg:flex-row transition duration-200">
+      <section className="bg-ghostWhite-600 dark:bg-eerieBlack w-screen h-screen flex grow flex-col lg:flex-row transition duration-200">
         <ModalProvider>
           <Navbar />
 

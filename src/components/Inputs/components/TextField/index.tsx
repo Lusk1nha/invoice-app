@@ -11,7 +11,7 @@ export function TextField({ id, title, className, disabled, placeholder }: TextF
   return (
     <div className={`${className ?? ''} flex flex-col w-full`}>
       <label
-        className="text-ube dark:text-coolGrey-600 text-xs font-medium mb-[10px]"
+        className="text-ube dark:text-coolGrey-600 md:dark:text-lavender text-xs font-medium mb-[10px]"
         htmlFor={id}>
         {title}
       </label>

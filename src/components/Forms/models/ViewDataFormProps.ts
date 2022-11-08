@@ -3,5 +3,7 @@ import { CreateInvoiceFormModel } from './../components/NewInvoiceForm/models/Cr
 
 export interface ViewDataFormProps {
   form: UseFormReturn<CreateInvoiceFormModel>;
-  onSubmit: (data: CreateInvoiceFormModel) => any
+  onSubmit: (data: CreateInvoiceFormModel) => any;
+  items: string[];
+  setItems: React.Dispatch<React.SetStateAction<any[]>>;
 };

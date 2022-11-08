@@ -25,7 +25,10 @@ module.exports = {
           '600': '#1E2139',
           '400': '#252945'
         },
-        'ghostWhite': '#F8F8FB',
+        'ghostWhite': {
+          '600': '#F8F8FB',
+          '400': '#F9FAFE'
+        },
         'eerieBlack': '#141625',
         'chineseBlack': '#0C0E16',
         'eucalyptus': '#33D69F',
@@ -53,11 +56,17 @@ module.exports = {
         'fieldsFormOnSmartphone': [
           'city postCode',
           'country country'
+        ],
+        'itemListFormOnSmartphone': [
+          'itemName itemName itemName itemName itemName',
+          'itemQty itemPrice itemPrice itemTotal btnDelete'
         ]
       },
       gridTemplateColumns: {
         'invoiceItem': '1fr 1fr',
         'fieldsFormOnSmartphone': '1fr 1fr',
+        'itemListOnSmartphone': '1.2fr 2fr 1fr 0.5fr',
+        'itemListOnDesktop': '2fr 0.55fr 1fr 0.55fr 0.5fr'
       },
       gridTemplateRows: {
         'invoiceItem': `1fr 2fr`,

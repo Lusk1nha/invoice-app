@@ -5,9 +5,12 @@ import ViewDataNewInvoice from "./ViewDataNewInvoice";
 
 import { LogicDataFormProps } from "../../../models/LogicDataFormProps";
 import { CreateInvoiceFormModel } from "../models/CreateInvoiceFormModel";
+import { useState } from "react";
 
 
 export default function LogicDataNewInvoice({ defaultValues, onSubmit }: LogicDataFormProps) {
+  const [items, setItems] = useState<any[]>([]);
+
   const form = useForm<CreateInvoiceFormModel>({
     mode: "onSubmit",
     defaultValues
@@ -19,5 +22,5 @@ export default function LogicDataNewInvoice({ defaultValues, onSubmit }: LogicDa
       .catch(err => console.error(err))
   };
 
-  return <ViewDataNewInvoice form={form} onSubmit={handleSubmit} />
+  return <ViewDataNewInvoice form={form} onSubmit={handleSubmit} items={items} setItems={setItems} />
 }
