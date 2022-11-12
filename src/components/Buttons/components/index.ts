@@ -3,3 +3,8 @@ export * from '../components/FilterButton';
 export * from '../components/LogoButton';
 export * from '../components/NewInvoiceButton';
 export * from '../components/ThemeButton';
+export * from '../components/AddNewItemButton';
+export * from '../components/RemoveItemButton';
+export * from '../components/DiscardButton';
+export * from '../components/SaveAsDraftButton';
+export * from '../components/SaveButton';

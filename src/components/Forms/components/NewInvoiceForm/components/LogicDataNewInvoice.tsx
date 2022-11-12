@@ -22,5 +22,14 @@ export default function LogicDataNewInvoice({ defaultValues, onSubmit }: LogicDa
       .catch(err => console.error(err))
   };
 
+  function discard() {
+
+  };
+
+  function saveAsDraft() {
+
+  };
+
+
   return <ViewDataNewInvoice form={form} onSubmit={handleSubmit} items={items} setItems={setItems} />
 }

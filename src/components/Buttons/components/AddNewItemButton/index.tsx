@@ -1,17 +1,7 @@
 import { ButtonHTMLAttributes } from "react";
-import { ButtonProps } from "../../models/ButtonProps";
 
-interface AddNewItemButtonProps extends ButtonProps {
-  setItems: React.Dispatch<React.SetStateAction<any[]>>;
-};
-
-export function AddNewItemButton(props: AddNewItemButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) {
-
-  const handleClick = () => {
-    props.setItems(items => [...items, {}])
-  };
-
-  return(
-    <button {...props} onClick={handleClick} />
-  );
+export function AddNewItemButton(props: ButtonHTMLAttributes<HTMLButtonElement>) {
+  return <button type="button" className="w-full h-12 bg-ghostWhite-400 dark:bg-yankeesBlue-400 rounded-[24px] text-ube dark:text-coolGrey-600 text-xs font-bold tracking-[-0.25px]" {...props} >
+    {props.children ?? '+ Add New Item'}
+  </button>
 };

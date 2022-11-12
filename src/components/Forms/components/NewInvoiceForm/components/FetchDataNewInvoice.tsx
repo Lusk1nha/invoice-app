@@ -53,8 +53,8 @@ export default function FetchDataNewInvoice() {
     <>
       {
         isLoading
-          ? (<div>Loading...</div>)
-          : (<LogicDataNewInvoice defaultValues={defaultValues} onSubmit={handleSubmit} />)
+          ? <div>Loading...</div>
+          : <LogicDataNewInvoice defaultValues={defaultValues} onSubmit={handleSubmit} />
       }
     </>
   );

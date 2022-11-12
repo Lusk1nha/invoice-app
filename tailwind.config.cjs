@@ -60,20 +60,28 @@ module.exports = {
         'itemListFormOnSmartphone': [
           'itemName itemName itemName itemName itemName',
           'itemQty itemPrice itemPrice itemTotal btnDelete'
+        ],
+        'itemListFormOnDesktop': [
+          'itemName itemQty itemPrice itemTotal btnDelete'
         ]
       },
       gridTemplateColumns: {
         'invoiceItem': '1fr 1fr',
         'fieldsFormOnSmartphone': '1fr 1fr',
-        'itemListOnSmartphone': '1.2fr 2fr 1fr 0.5fr',
+        'itemListOnSmartphone': '1.2fr 1.2fr 1.2fr 1fr 1fr',
         'itemListOnDesktop': '2fr 0.55fr 1fr 0.55fr 0.5fr'
       },
       gridTemplateRows: {
         'invoiceItem': `1fr 2fr`,
-        'fieldsFormOnSmartphone': '1fr 1fr'
+        'fieldsFormOnSmartphone': '1fr 1fr',
+        'itemListOnSmartphone': '1fr 1fr',
+        'itemListOnDesktop': '1fr',
       },
       backgroundImage: {
         'checkedImage': "url('/src/assets/icon-check.svg')"
+      },
+      boxShadow: {
+        '3xl': '0px -17px 64px 0px rgba(0,0,0,0.08)'
       }
     },
     screens: {
@@ -87,6 +95,9 @@ module.exports = {
     require('tailwind-scrollbar')
   ],
   variants: {
-    scrollbar: ['rounded']
+    scrollbar: ['rounded'],
+    extend: {
+      fill: ['group-hover', 'hover']
+    }
   }
 }

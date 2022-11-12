@@ -1,8 +1,9 @@
-import { AddNewItemButton } from '../../../../Buttons/components/AddNewItemButton';
+import { DiscardButton, SaveAsDraftButton, SaveButton } from '../../../../Buttons/components';
 import { GoBackButton } from '../../../../Buttons/components/GoBackButton';
+
 import { TextField } from '../../../../Inputs/components/TextField';
-import { ItemFormDesktop } from '../../../../ItemFormDesktop';
-import { ItemFormSmartphone } from '../../../../ItemFormSmartphone';
+import { ItemFormList } from '../../../../ItemFormList';
+
 import { ViewDataFormProps } from './../../../models/ViewDataFormProps';
 
 export default function ViewDataNewInvoice({ form, onSubmit, items, setItems }: ViewDataFormProps) {
@@ -10,8 +11,8 @@ export default function ViewDataNewInvoice({ form, onSubmit, items, setItems }: 
   const { errors, isSubmitting } = formState;
 
   return (
-    <form className="w-full h-full grow flex flex-col pb-10" onSubmit={handleSubmit(onSubmit)}>
-      <div>
+    <form className="w-full h-full grow flex flex-col pb-10 scrollbar-thin scrollbar-thumb-lavender dark:scrollbar-thumb-yankeesBlue-400 scrollbar-thumb-rounded-full scrollbar-track-none scroll-mr-4" onSubmit={handleSubmit(onSubmit)}>
+      <section className="pb-14 px-10 pt-8 md:px-14 lg:px-20">
         <div>
           <GoBackButton title="Go back to home page" className="w-auto flex items-center justify-start mb-6" />
         </div>
@@ -52,49 +53,16 @@ export default function ViewDataNewInvoice({ form, onSubmit, items, setItems }: 
           <TextField id="billToProjectDescription" title="Project Description" placeholder="e.g. Graphic Design Service" />
         </fieldset>
 
-        <fieldset className="flex flex-col grow gap-y-6 mb-10">
-          <legend className="text-lg font-bold text-lightSlateGray mb-6 tracking-[-0.38px]">Item List</legend>
+        <ItemFormList items={items} setItems={setItems} />
+      </section>
 
-          <table className="hidden flex-col justify-center md:flex">
-            <thead>
-              <tr className="grid grid-cols-itemListOnDesktop mb-4">
-                <th align="left" className="w-full text-xs text-ube dark:text-coolGrey-600 md:dark:text-lavender tracking-[-0.38px] font-medium">Item Name</th>
-                <th align="left" className="w-full text-xs text-ube dark:text-coolGrey-600 md:dark:text-lavender tracking-[-0.38px] font-medium">Qty.</th>
-                <th align="left" className="w-full text-xs text-ube dark:text-coolGrey-600 md:dark:text-lavender tracking-[-0.38px] font-medium">Price</th>
-                <th align="left" className="w-full text-xs text-ube dark:text-coolGrey-600 md:dark:text-lavender tracking-[-0.38px] font-medium">Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              {items?.length > 0 &&
-                items.map((item, index) => {
-                  return (
-                    <ItemFormDesktop key={index} />
-                  )
-                })
-              }
-            </tbody>
-          </table>
-
-          <ul className="flex flex-col justify-center list-none md:hidden gap-y-12">
-            {items?.length > 0 &&
-              items.map((item, index) => {
-                return (
-                  <ItemFormSmartphone key={index} />
-                )
-              })
-            }
-          </ul>
-
-
-          <AddNewItemButton setItems={setItems} className="w-full h-12 bg-ghostWhite-400 dark:bg-yankeesBlue-400 rounded-[24px] text-ube dark:text-coolGrey-600 text-xs font-bold tracking-[-0.25px]">
-            + Add New Item
-          </AddNewItemButton>
-        </fieldset>
-
-        <div>
-
+      <section className="bg-transparent flex items-end absolute right-0 left-0 bottom-0">
+        <div className="bg-white dark:bg-yankeesBlue-600 h-[91px] flex items-center justify-center grow px-6 shadow-3xl gap-x-2">
+          <DiscardButton />
+          <SaveAsDraftButton />
+          <SaveButton />
         </div>
-      </div>
+      </section>
     </form>
   );
 };
