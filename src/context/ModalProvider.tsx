@@ -1,19 +1,15 @@
 import { createContext } from "react";
+
 import { Modal } from "../components/Modal";
 import useModal from './../hooks/useModal';
 
-interface ModalContextProps {
-  opened: boolean;
-  setOpened: React.Dispatch<React.SetStateAction<boolean>>;
-  content: React.ReactNode;
-  setContent: React.Dispatch<React.SetStateAction<boolean>>
-};
+import { ModalContextProps } from "./models/ModalContextProps";
 
 export const ModalContext = createContext<ModalContextProps | any>(null);
 
 interface ModalProviderProps {
   children: React.ReactNode;
-};  
+};
 
 export function ModalProvider({ children }: ModalProviderProps) {
   const [opened, setOpened, content, setContent] = useModal();

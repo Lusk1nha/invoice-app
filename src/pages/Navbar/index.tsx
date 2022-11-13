@@ -1,7 +1,7 @@
-import { LogoButton } from "../../components/Buttons/components/LogoButton";
-import { ThemeButton } from "../../components/Buttons/components/ThemeButton";
+import { LogoButton } from "../../components/Utilities/Buttons/components";
+import { ThemeButton } from "../../components/Utilities/Buttons/components/ThemeButton";
 
-import { AvatarButton } from '../../components/Buttons/components/AvatarButton/index';
+import { AvatarButton } from '../../components/Utilities/Buttons/components/AvatarButton/index';
 
 export function Navbar() {
   return (

@@ -20,8 +20,9 @@ export type Address = {
 };
 
 export type Item = {
-  Name: string;
-  Quantity: number;
-  Price: number;
-  Total: number;
+  Name: string | null;
+  Quantity: number | null;
+  Price: number | null;
+  Total: number | null;
+  id?: number;
 };

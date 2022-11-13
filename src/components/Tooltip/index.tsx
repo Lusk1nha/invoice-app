@@ -1,6 +1,5 @@
 import { Fragment } from "react";
-import { FilterButton } from "../Buttons/components/FilterButton";
-import { NewInvoiceButton } from "../Buttons/components/NewInvoiceButton";
+import { FilterButton, NewInvoiceButton } from "../Utilities/Buttons/components";
 import { TotalInvoices } from "./components";
 
 export function Tooltip() {

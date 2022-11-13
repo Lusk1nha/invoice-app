@@ -1,4 +1,4 @@
-import { InvoiceItemProps } from "../../../shared/props/InvoiceItemProps";
+import { InvoiceItemProps } from "./InvoiceItemProps";
 
 export interface RenderInvoicesItemsProps {
   invoices: InvoiceItemProps[];

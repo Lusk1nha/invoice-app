@@ -1,7 +1,7 @@
 import { Tooltip } from "../../components/Tooltip";
 import { InvoiceList } from './../../components/InvoiceList/index';
 
-import { InvoiceItemProps } from "../../shared/props/InvoiceItemProps";
+import { InvoiceItemProps } from "../../components/InvoiceList/models/InvoiceItemProps";
 import { State } from "../../shared/enums/Status";
 import { Fragment } from "react";
 import { Modal } from "../../components/Modal";

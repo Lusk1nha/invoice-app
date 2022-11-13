@@ -1,4 +1,4 @@
-import { InvoiceItem } from "../../../InvoiceItem";
+import { InvoiceItem } from "../InvoiceItem";
 import { RenderInvoicesItemsProps } from "../../models/RenderInvoicesItemsProps";
 
 export function RenderInvoicesItems({ invoices }: RenderInvoicesItemsProps) {

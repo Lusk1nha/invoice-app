@@ -1,5 +1,3 @@
-import FetchDataNewInvoice from "./components/FetchDataNewInvoice";
+import Data from "./components/Data";
 
-export function NewInvoiceForm() {
-  return <FetchDataNewInvoice />
-};
+export const NewInvoiceForm = () => <Data />;
