@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 import { FormContextProps } from './models/FormContextProps';
 
-export const FormContext = createContext<FormContextProps | any>(null);
+export const FormContext = createContext<FormContextProps>({} as FormContextProps);
 
 interface FormProviderProps {
   children: React.ReactNode;

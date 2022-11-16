@@ -43,7 +43,7 @@ export default function Data() {
     InvoiceDate: null,
     PaymentTerms: null,
     ProjectDescription: '',
-    Items: [{ Name: 'Teste', Price: 232, Quantity: 2, Total: 464}]
+    Items: []
   };
 
   return (

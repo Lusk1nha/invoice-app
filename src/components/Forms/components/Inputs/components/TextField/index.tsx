@@ -1,19 +1,24 @@
 import { TextFieldProps } from '../../models/TextFieldProps';
+import { useContext } from 'react';
+import { FormContext } from './../../../../../../context/FormProvider';
+import { Label } from '../Label';
 
-export function TextField({ id, name, title, className, disabled, placeholder, register, rules }: TextFieldProps) {
+export function TextField({ id, name, title, value, className, preventDefaultStyle, disabled, disableLabelInTablet, placeholder, rules }: TextFieldProps) {
+  const { register } = useContext(FormContext);
+
+  const defaultClassName = 'w-full h-12 bg-white dark:bg-yankeesBlue-600 text-chineseBlack dark:text-white text-xs font-bold tracking-[-0.25px] border-2 border-lavender dark:border-yankeesBlue-400 rounded-[4px] outline-none px-4';
+
   return (
-    <div className={`${className ?? ''} flex flex-col w-full`}>
-      <label
-        className="text-ube dark:text-coolGrey-600 md:dark:text-lavender text-xs font-medium mb-[10px]"
-        htmlFor={id}>
-        {title}
-      </label>
+    <div className={`flex flex-col w-full ${className ?? ''}`}>
+      <Label id={id} title={title} disableInTablet={disableLabelInTablet} />
 
       <input
-        className="w-full h-12 bg-white dark:bg-yankeesBlue-600 text-chineseBlack dark:text-white text-xs font-bold tracking-[-0.25px] border-2 border-lavender dark:border-yankeesBlue-400 rounded-[4px] outline-none px-4"
+        className={`${preventDefaultStyle ? `${className} ${defaultClassName}` : className ?? defaultClassName} ${disabled ? 'outline-none border-none pointer-events-none' : ''}`}
         type="text"
-        {...register(name, rules)}
+        value={value}
+        disabled={disabled}
         placeholder={placeholder ?? ""}
+        {...register(name, rules)}
       />
     </div>
   );

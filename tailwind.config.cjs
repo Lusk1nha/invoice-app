@@ -68,7 +68,7 @@ module.exports = {
       gridTemplateColumns: {
         'invoiceItem': '1fr 1fr',
         'fieldsFormOnSmartphone': '1fr 1fr',
-        'itemListOnSmartphone': '1.2fr 1.2fr 1.2fr 1fr 1fr',
+        'itemListOnSmartphone': '1.2fr 1.2fr 1.1fr 1fr 1fr',
         'itemListOnDesktop': '2fr 0.55fr 1fr 0.55fr 0.5fr'
       },
       gridTemplateRows: {

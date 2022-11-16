@@ -1,9 +1,36 @@
 import { ItemForm, Placeholder } from "./components"
 import { AddNewItemButton } from "../../../Utilities/Buttons/components"
 
-import { ItemFormListProps } from "./models/ItemFormListProps"
+import { useContext } from 'react';
+import { FormContext } from './../../../../context/FormProvider';
+import { Label } from "./models/PlaceholderProps";
 
-export function ItemList({ items, append, setValue, remove, update, register, rules }: ItemFormListProps) {
+const placeholders: Label[] = [
+  {
+    text: 'Item Name',
+    title: 'Item Name',
+    ariaDescription: 'Label with Item name'
+  },
+  {
+    text: 'Qty.',
+    title: 'Item Quantity',
+    ariaDescription: 'Label with Item quantity'
+  },
+  {
+    text: 'Price',
+    title: 'Item Price',
+    ariaDescription: 'Label with Item price'
+  },
+  {
+    text: 'Total',
+    title: 'Item Total',
+    ariaDescription: 'Label that shows the item price multiplied by item quantity'
+  }
+]
+
+export function ItemList() {
+  const { fields, append } = useContext(FormContext);
+
   const handleAddItemButtonClick = () => append({
     Name: null,
     Quantity: null,
@@ -16,16 +43,16 @@ export function ItemList({ items, append, setValue, remove, update, register, ru
       <legend className="text-lg font-bold text-lightSlateGray mb-6 tracking-[-0.38px]">Item List</legend>
 
       <ul className="flex flex-col justify-center list-none gap-y-12 md:gap-y-[18px] mb-5">
-        <Placeholder />
+        <Placeholder labels={placeholders} />
 
-        {items?.length > 0 &&
-          items.map((item, index) => {
+        {
+          fields?.length > 0 &&
+          fields.map((item, index) => {
             return (
               <ItemForm
                 key={item.id}
                 item={item}
                 index={index}
-                register={register}
               />
             )
           })

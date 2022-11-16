@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import * as Yup from "yup";
 
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -7,9 +7,9 @@ import View from "../View";
 
 import { LogicDataFormProps } from "../../../../models/LogicDataFormProps";
 import { CreateInvoiceFormModel } from "../../models/CreateInvoiceFormModel";
-import { useState } from "react";
-import { Item } from "../../../../../../shared/models/InvoiceModel";
 
+import { FormProvider } from '../../../../../../context/FormProvider';
+import { redirect } from "react-router-dom";
 
 const validationSchema = Yup.object().shape({
   BillFrom: Yup.object({
@@ -101,36 +101,47 @@ const validationSchema = Yup.object().shape({
 
 
 export default function Logic({ defaultValues, onSubmit }: LogicDataFormProps) {
-  const [items, setItems] = useState<Item[]>([]);
 
-  const form = useForm<CreateInvoiceFormModel>({
+  const { formState, register, handleSubmit, reset, control, setValue, watch } = useForm<CreateInvoiceFormModel>({
     mode: "onSubmit",
     defaultValues,
     resolver: yupResolver(validationSchema)
   });
 
-  async function handleSubmit(data: CreateInvoiceFormModel) {
+  const { errors, isSubmitting } = formState;
+
+  const { fields, append, remove, update, insert } = useFieldArray({
+    control,
+    name: "Items",
+    rules: {
+      required: true,
+      minLength: 1
+    }
+  });
+
+  console.log(errors);
+
+  async function handleSubmitLogic(data: CreateInvoiceFormModel): Promise<void> {
     console.log(data);
+    
     await onSubmit(data)
-      .then(() => form.reset(data))
+      .then(() => reset(data))
       .catch(err => console.error(err))
   };
 
-  function discard() {
-
+  async function handleDiscard(): Promise<void> {
+    await reset();
+    await redirect('/');
   };
 
-  function saveAsDraft() {
+  async function saveAsDraft(): Promise<void> {
 
   };
 
 
   return (
-    <View
-      form={form}
-      onSubmit={handleSubmit}
-      items={items}
-      setItems={setItems}
-    />
+    <FormProvider value={{ fields, handleSubmit, append, remove, update, insert, setValue, watch, register }}>
+      <View onSubmit={handleSubmitLogic} onDiscard={handleDiscard} />
+    </FormProvider>
   )
 }
