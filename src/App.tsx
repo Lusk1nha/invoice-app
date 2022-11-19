@@ -4,7 +4,7 @@ import { Navbar } from './pages/Navbar/index';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Routes } from "react-router";
 
-import { ModalProvider } from "./context/ModalProvider";
+import { ModalProvider } from "./context/components/ModalProvider";
 import { FormRender } from "./components/Forms";
 import { QueryClient, QueryClientProvider } from "react-query";
 

@@ -4,7 +4,7 @@ import { FormRender } from "../../../../Forms";
 import { PlusSVG } from "../../../../Icons/components/PlusSVG";
 import { ButtonProps } from "../../models/ButtonProps";
 
-import { ModalContext } from './../../../../../context/ModalProvider';
+import { ModalContext } from '../../../../../context/components/ModalProvider';
 
 export function NewInvoiceButton(props: ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) {
   const modalContext = useContext(ModalContext);

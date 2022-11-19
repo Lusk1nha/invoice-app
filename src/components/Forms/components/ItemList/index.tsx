@@ -2,7 +2,7 @@ import { ItemForm, Placeholder } from "./components"
 import { AddNewItemButton } from "../../../Utilities/Buttons/components"
 
 import { useContext } from 'react';
-import { FormContext } from './../../../../context/FormProvider';
+import { FormContext } from '../../../../context/components/FormProvider';
 import { Label } from "./models/PlaceholderProps";
 
 const placeholders: Label[] = [

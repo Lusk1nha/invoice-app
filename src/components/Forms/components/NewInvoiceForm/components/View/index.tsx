@@ -1,16 +1,18 @@
 import { DiscardButton, SaveAsDraftButton, SaveButton } from '../../../../../Utilities/Buttons/components';
 import { GoBackButton } from '../../../../../Utilities/Buttons/components/GoBackButton';
 
-import { TextField } from '../../../Inputs/components/TextField';
+import { TextField } from '../../../../../Inputs/components/TextField';
 import { ItemList } from '../../../ItemList';
 import { FieldGroup } from '../../../FieldGroup';
 import { Title } from '../../../Title';
 
 import { ViewDataFormProps } from '../../../../models/ViewDataFormProps';
 
-import { FormProvider } from '../../../../../../context/FormProvider';
+import { FormProvider } from '../../../../../../context/components/FormProvider';
 import { useContext } from 'react';
-import { FormContext } from './../../../../../../context/FormProvider';
+import { FormContext } from '../../../../../../context/components/FormProvider';
+import { DateTime } from '../../../../../Inputs/components/DateTime';
+import dayjs from 'dayjs';
 
 export default function View({ onSubmit, onDiscard }: ViewDataFormProps) {
   const {
@@ -106,8 +108,8 @@ export default function View({ onSubmit, onDiscard }: ViewDataFormProps) {
             />
           </div>
 
-          <div className="flex flex-col md:flex-row w-full gap-x-6 gap-y-4">
-            <TextField id="billToInvoiceDate" title="Invoice Date" name="InvoiceDate" />
+          <div className="flex flex-col md:flex-row w-full gap-x-6 gap-y-6">
+            <DateTime id="billToInvoiceDate" title="Invoice Date" name="InvoiceDate" />
             <TextField id="billToPaymentTerms" title="Payment Terms" name="PaymentTerms" />
           </div>
 
@@ -127,7 +129,7 @@ export default function View({ onSubmit, onDiscard }: ViewDataFormProps) {
       </ul>
 
       <section className="bg-transparent flex items-end absolute right-0 left-0 bottom-0">
-        <div className="bg-white dark:bg-yankeesBlue-600 h-[91px] flex items-center justify-center grow px-6 shadow-3xl gap-x-2">
+        <div className="bg-white dark:bg-yankeesBlue-600 h-[91px] flex items-center justify-center grow px-10 md:px-14 lg:px-20 shadow-3xl gap-x-2 z-10">
           <DiscardButton type="button" onClick={onDiscard} />
           <SaveAsDraftButton />
           <SaveButton type="submit" />

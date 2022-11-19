@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ModalContext } from "../../context/ModalProvider";
+import { ModalContext } from "../../context/components/ModalProvider";
 import { ModalProps } from "./models/ModalProps";
 
 export function Modal({ children, on, preventClickOutsideClosing }: ModalProps) {

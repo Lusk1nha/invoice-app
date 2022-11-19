@@ -8,7 +8,7 @@ import View from "../View";
 import { LogicDataFormProps } from "../../../../models/LogicDataFormProps";
 import { CreateInvoiceFormModel } from "../../models/CreateInvoiceFormModel";
 
-import { FormProvider } from '../../../../../../context/FormProvider';
+import { FormProvider } from '../../../../../../context/components/FormProvider';
 import { redirect } from "react-router-dom";
 
 const validationSchema = Yup.object().shape({

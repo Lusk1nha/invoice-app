@@ -3,17 +3,16 @@ import { Item } from "../../../../../../shared/models/InvoiceModel";
 import { RemoveItemButton } from "../../../../../Utilities/Buttons/components";
 
 import { TotalField } from './../TotalField/index';
-import { TextField } from './../../../Inputs/components/TextField/index';
-import { FormContext } from './../../../../../../context/FormProvider';
+import { TextField } from './../../../../../Inputs/components/TextField';
+import { FormContext } from '../../../../../../context/components/FormProvider';
 import { useContext } from "react";
 
 export interface ItemFormProps {
   index: number;
   item: Item;
-  rules?: RegisterOptions;
 }
 
-export function ItemForm({ index, rules }: ItemFormProps) {
+export function ItemForm({ index, item }: ItemFormProps) {
   const { watch, remove } = useContext(FormContext);
 
   const watchPrice = watch(`Items.${index}.Price`);

@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, useContext } from 'react';
-import { ModalContext } from '../../../../../context/ModalProvider';
+import { ModalContext } from '../../../../../context/components/ModalProvider';
 import { ButtonProps } from '../../models/ButtonProps';
 import { ArrowLeftSVG } from './../../../../Icons/components/ArrowLeftSVG/index';
 

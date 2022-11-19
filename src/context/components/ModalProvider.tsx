@@ -1,9 +1,9 @@
 import { createContext } from "react";
 
-import { Modal } from "../components/Modal";
-import useModal from './../hooks/useModal';
+import { Modal } from "../../components/Modal";
+import useModal from '../../hooks/useModal';
 
-import { ModalContextProps } from "./models/ModalContextProps";
+import { ModalContextProps } from "../models/ModalContextProps";
 
 export const ModalContext = createContext<ModalContextProps | any>(null);
 

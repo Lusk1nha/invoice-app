@@ -1,9 +1,11 @@
 import { Path, RegisterOptions } from "react-hook-form";
-import { CreateInvoiceFormModel } from "../../NewInvoiceForm/models/CreateInvoiceFormModel";
+import { InvoiceModel } from "../../../../../shared/models/InvoiceModel";
 
-export interface TextFieldProps {
+import { Dayjs } from 'dayjs';
+
+export interface DateTimeProps {
   id: string;
-  name: Path<CreateInvoiceFormModel>;
+  name: Path<InvoiceModel>;
   title: string;
   value?: string;
   className?: string;
@@ -12,4 +14,5 @@ export interface TextFieldProps {
   rules?: RegisterOptions;
   disableLabelInTablet?: boolean;
   preventDefaultStyle?: boolean;
+  defaultDate?: Dayjs;
 };

@@ -1,6 +1,5 @@
 import { TotalFieldProps } from "../../models/TotalFieldProps";
-import { Label } from '../../../Inputs/components/Label/index';
-import { TextField } from "../../../Inputs/components/TextField";
+import { TextField } from "../../../../../Inputs/components/TextField";
 
 export function TotalField({ id, price, quantity, index, disableLabelInTablet }: TotalFieldProps) {
   const sum = (price * quantity).toFixed(2);

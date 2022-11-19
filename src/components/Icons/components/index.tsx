@@ -7,3 +7,4 @@ export * from './PlusSVG';
 export * from './SunSVG';
 export * from './NothingFoundSVG';
 export * from './DeleteSVG';
+export * from './CalendarSVG';
