@@ -1,8 +1,30 @@
+import { Home } from "./pages/Home";
+import { Navbar } from './pages/Navbar/index';
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Routes } from "react-router";
+
+import { ModalProvider } from "./context/components/ModalProvider";
+import { FormRender } from "./components/Forms";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient()
 
 export default function App() {
   return (
-    <div className="w-screen h-screen bg-purple-600 color-black font-bold space-x-4">
-      Teste
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <section className="bg-ghostWhite-600 dark:bg-eerieBlack w-screen h-screen flex grow flex-col lg:flex-row transition duration-200">
+        <ModalProvider>
+          <Navbar />
+
+          <Router>
+            <Routes>
+              <Route path="/" index element={<Home />} />
+              <Route path="/new" element={<FormRender type={"NewInvoice"} />} />
+            </Routes>
+          </Router>
+        </ModalProvider>
+      </section>
+    </QueryClientProvider>
   )
 };
