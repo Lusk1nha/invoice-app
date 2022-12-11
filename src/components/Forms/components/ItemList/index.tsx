@@ -40,7 +40,7 @@ export function ItemList() {
 
   return (
     <fieldset className="flex flex-col grow gap-y-6 md:gap-y-4 mb-10">
-      <legend className="text-lg font-bold text-lightSlateGray mb-6 tracking-[-0.38px]">Item List</legend>
+      <legend className="text-lg font-bold text-lightSlateGray mb-6 tracking-[-0.38px]" title="Item list">Item List</legend>
 
       <ul className="flex flex-col justify-center list-none gap-y-12 md:gap-y-[18px] mb-5">
         <Placeholder labels={placeholders} />
@@ -59,7 +59,7 @@ export function ItemList() {
         }
       </ul>
 
-      <AddNewItemButton onClick={handleAddItemButtonClick} />
+      <AddNewItemButton title="Click here to add a new item" onClick={handleAddItemButtonClick} />
     </fieldset>
   )
 }

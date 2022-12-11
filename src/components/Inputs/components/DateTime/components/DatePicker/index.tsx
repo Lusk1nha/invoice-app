@@ -17,14 +17,19 @@ export function DatePicker({ name, placeholder, rules, selectedDate, shownDate, 
 
   return (
     <div className="w-full h-full flex grow">
-      <div onClick={handleClick} className="w-full h-12 relative flex items-center bg-white dark:bg-yankeesBlue-600 text-chineseBlack dark:text-white text-xs font-bold tracking-[-0.25px] border-[1px] border-lavender dark:border-yankeesBlue-400 rounded-[4px] outline-none pl-4 pr-1 cursor-pointer hover:border-brightPurple transition-all select-none">
+      <div
+        className="w-full h-12 relative flex items-center bg-white dark:bg-yankeesBlue-600 text-chineseBlack dark:text-white text-xs font-bold tracking-[-0.25px] border-[1px] border-lavender dark:border-yankeesBlue-400 rounded-[4px] outline-none pl-4 pr-1 cursor-pointer hover:border-brightPurple transition-colors select-none"
+        title={placeholder ?? selectedDate?.format('DD MMM YYYY')}
+        onClick={handleClick}
+      >
         <input
           className="w-full h-full bg-transparent text-chineseBlack dark:text-white text-xs font-bold tracking-[-0.25px] outline-none border-none cursor-pointer select-none pointer-events-none"
           type="text"
           placeholder={placeholder ?? ""}
-          readOnly
+          title={placeholder ?? selectedDate?.format('DD MMM YYYY')}
           value={selectedDate?.format('DD MMM YYYY')}
-          {...register(name, rules)}
+          readOnly
+          disabled
         />
 
         <div className="w-full max-w-[35px] flex items-center justify-center">

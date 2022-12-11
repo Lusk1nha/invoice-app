@@ -1,18 +1,37 @@
 import { DiscardButton, SaveAsDraftButton, SaveButton } from '../../../../../Utilities/Buttons/components';
 import { GoBackButton } from '../../../../../Utilities/Buttons/components/GoBackButton';
 
-import { TextField } from '../../../../../Inputs/components/TextField';
+import { TextField, DateTime, Dropdown } from '../../../../../Inputs/components';
 import { ItemList } from '../../../ItemList';
 import { FieldGroup } from '../../../FieldGroup';
 import { Title } from '../../../Title';
 
 import { ViewDataFormProps } from '../../../../models/ViewDataFormProps';
 
-import { FormProvider } from '../../../../../../context/components/FormProvider';
 import { useContext } from 'react';
 import { FormContext } from '../../../../../../context/components/FormProvider';
-import { DateTime } from '../../../../../Inputs/components/DateTime';
+
 import dayjs from 'dayjs';
+import { DropdownOptionModel } from '../../../../../../shared/models/DropdownOptionModel';
+
+const paymentTermsOptions = [
+  {
+    text: 'Net 1 Day',
+    value: 1
+  },
+  {
+    text: 'Net 7 Days',
+    value: 7
+  },
+  {
+    text: 'Net 14 Days',
+    value: 14
+  },
+  {
+    text: 'Net 30 Days',
+    value: 30
+  }
+] as DropdownOptionModel[]
 
 export default function View({ onSubmit, onDiscard }: ViewDataFormProps) {
   const {
@@ -26,9 +45,9 @@ export default function View({ onSubmit, onDiscard }: ViewDataFormProps) {
           <GoBackButton title="Go back to home page" className="w-auto flex items-center justify-start mb-6" />
         </div>
 
-        <Title>New Invoice</Title>
+        <Title aria-label="New Invoice" title="Form to create new invoices">New Invoice</Title>
 
-        <FieldGroup label="Bill From:">
+        <FieldGroup label="Bill From">
           <TextField
             id="billFromStreet"
             title="Street Address"
@@ -62,7 +81,7 @@ export default function View({ onSubmit, onDiscard }: ViewDataFormProps) {
           </div>
         </FieldGroup>
 
-        <FieldGroup label="Bill To:">
+        <FieldGroup label="Bill To">
           <TextField
             id="billToClientName"
             title="Client’s Name"
@@ -109,8 +128,8 @@ export default function View({ onSubmit, onDiscard }: ViewDataFormProps) {
           </div>
 
           <div className="flex flex-col md:flex-row w-full gap-x-6 gap-y-6">
-            <DateTime id="billToInvoiceDate" title="Invoice Date" name="InvoiceDate" />
-            <TextField id="billToPaymentTerms" title="Payment Terms" name="PaymentTerms" />
+            <DateTime id="billToInvoiceDate" title="Invoice Date" name="InvoiceDate" defaultDate={dayjs()} />
+            <Dropdown id="billToPaymentTerms" title="Payment Terms" name="PaymentTerms" placeholder="Select payment term" options={paymentTermsOptions} />
           </div>
 
           <TextField
@@ -124,15 +143,11 @@ export default function View({ onSubmit, onDiscard }: ViewDataFormProps) {
         <ItemList />
       </section>
 
-      <ul>
-
-      </ul>
-
       <section className="bg-transparent flex items-end absolute right-0 left-0 bottom-0">
         <div className="bg-white dark:bg-yankeesBlue-600 h-[91px] flex items-center justify-center grow px-10 md:px-14 lg:px-20 shadow-3xl gap-x-2 z-10">
-          <DiscardButton type="button" onClick={onDiscard} />
-          <SaveAsDraftButton />
-          <SaveButton type="submit" />
+          <DiscardButton title="Click here to discard form" type="button" onClick={onDiscard} />
+          <SaveAsDraftButton title="Click here to save the content as draft" />
+          <SaveButton type="submit" title="Click here to save the content" />
         </div>
       </section>
     </form>

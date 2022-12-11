@@ -11,7 +11,7 @@ export function FormRender({ type }: FormRenderProps) {
         return <NewInvoiceForm />;
         break;
       case 'EditInvoice':
-        return <></>;
+        return null;
         break
       default:
         return null;

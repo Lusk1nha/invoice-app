@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import Logic from "../Logic";
 
 import { CreateInvoiceFormModel } from '../../models/CreateInvoiceFormModel';
+import { Loading } from './../../../../../Loading/index';
 
 export default function Data() {
   const { isLoading, data } = useQuery("mockupUserData", getData);
@@ -24,14 +25,6 @@ export default function Data() {
     const uri = "";
 
     try {
-      // return await fetch(uri, {
-      //   method: "POST",
-      //   headers: {
-      //     "Accept": "application/json",
-      //     "Content-Type": "application/json"
-      //   },
-      //   body: JSON.stringify(dataMapped)
-      // });
     } catch (err) {
       console.error(err);
     }
@@ -50,7 +43,7 @@ export default function Data() {
     <>
       {
         isLoading
-          ? <div>Loading...</div>
+          ? <Loading />
           : <Logic defaultValues={defaultValues} onSubmit={handleSubmit} />
       }
     </>

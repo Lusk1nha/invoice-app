@@ -2,13 +2,15 @@ import { Fragment } from "react";
 import { FilterButton, NewInvoiceButton } from "../Utilities/Buttons/components";
 import { TotalInvoices } from "./components";
 
-export function Tooltip() {
+import { TooltipProps } from "./TooltipProps";
+
+export function Tooltip({ invoices }: TooltipProps) {
 
   return (
     <Fragment>
       <div className="w-full h-full">
         <h4 title="Invoices" aria-label="Invoices" className="w-auto font-bold text-[20px] md:text-[32px] text-chineseBlack dark:text-white">Invoices</h4>
-        <TotalInvoices total={50} />
+        <TotalInvoices total={invoices.length} />
       </div>
 
       <div className="flex justify-center items-center h-full mr-5">

@@ -1,5 +1,5 @@
 import { Path, RegisterOptions } from "react-hook-form";
-import { InvoiceModel } from './../../../shared/models/InvoiceModel';
+import { InvoiceModel } from '../../../../shared/models/InvoiceModel';
 
 export interface TextFieldProps {
   id: string;

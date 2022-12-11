@@ -9,3 +9,10 @@
 }
 
 @tailwind utilities;
+
+
+@layer components {
+  .dropdownOption {
+    @apply bg-transparent py-4 px-5 text-chineseBlack dark:text-white text-xs font-bold tracking-[-0.25px] border-b-[1px] border-b-lavender dark:border-b-yankeesBlue-600 last-of-type:border-b-0 cursor-pointer hover:text-brightPurple focus:text-brightPurple dark:hover:text-brightPurple dark:focus:text-brightPurple transition-colors
+  }
+}

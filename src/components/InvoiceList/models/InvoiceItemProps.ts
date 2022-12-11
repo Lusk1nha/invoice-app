@@ -4,6 +4,6 @@ export interface InvoiceItemProps {
   code: string;
   date: string;
   personName: string;
-  price: string;
+  price: number;
   state: State;
 };

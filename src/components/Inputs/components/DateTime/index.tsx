@@ -1,15 +1,22 @@
 import { DateTimeProps } from './models/DateTimeProps';
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Label } from './../Label/index';
 import { DatePicker } from './components';
 import { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
+import { FormContext } from '../../../../context/components';
 
 export function DateTime({ id, name, title, disableLabelInTablet, className, placeholder, defaultDate, preventDefaultStyle, disabled }: DateTimeProps) {
   const [shownDate, setShownDate] = useState<Dayjs>(defaultDate ?? dayjs());
   const [selectedDate, setSelectedDate] = useState<Dayjs>(defaultDate ?? dayjs());
 
+  const { setValue } = useContext(FormContext)
+
   const defaultClassName = 'w-full flex flex-col items-start justify-center grow text-red-500';
+
+  useEffect(() => {
+    setValue(name, selectedDate.toDate())
+  }, [selectedDate])
 
   function handleDateChange(date: Dayjs) {
     setSelectedDate(date)

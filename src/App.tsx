@@ -13,14 +13,14 @@ const queryClient = new QueryClient()
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <section className="bg-ghostWhite-600 dark:bg-eerieBlack w-screen h-screen flex grow flex-col lg:flex-row transition duration-200">
+      <section className="bg-ghostWhite-600 dark:bg-eerieBlack w-screen h-screen flex grow flex-col lg:flex-row transition-colors duration-200">
         <ModalProvider>
           <Navbar />
 
           <Router>
             <Routes>
               <Route path="/" index element={<Home />} />
-              <Route path="/new" element={<FormRender type={"NewInvoice"} />} />
+              <Route path="/new" element={<FormRender type="NewInvoice" />} />
             </Routes>
           </Router>
         </ModalProvider>

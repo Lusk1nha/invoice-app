@@ -16,8 +16,8 @@ export function ThemeButton() {
     <button 
       type="button"
       className="group w-6 h-6"
-      title="Theme changer button"
-      aria-label="Theme changer button"
+      title="Click to change site theme"
+      aria-label="Click to change site theme"
       role="button"
       onClick={handleClick}>
         {
