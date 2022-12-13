@@ -15,4 +15,16 @@
   .dropdownOption {
     @apply bg-transparent py-4 px-5 text-chineseBlack dark:text-white text-xs font-bold tracking-[-0.25px] border-b-[1px] border-b-lavender dark:border-b-yankeesBlue-600 last-of-type:border-b-0 cursor-pointer hover:text-brightPurple focus:text-brightPurple dark:hover:text-brightPurple dark:focus:text-brightPurple transition-colors
   }
+
+  .invoiceFieldContainer {
+    @apply flex flex-col items-start justify-center gap-y-3
+  }
+  
+  .invoiceFieldPrimaryHeader {
+    @apply text-coolGrey-400 dark:text-lavender font-medium text-xs tracking-[-0.25px] leading-[15px]
+  }
+
+  .invoiceFieldPrimaryText {
+    @apply text-chineseBlack dark:text-white font-bold text-[15px] tracking-[-0.31px] leading-[20px]
+  }
 }

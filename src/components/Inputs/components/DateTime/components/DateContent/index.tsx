@@ -12,7 +12,7 @@ export function DateContent({ shownDate, selectedDate, onChange, onChangeViewDat
   };
 
   return (
-    <div onClick={handleClick} className="max-w-[400px] bg-white dark:bg-yankeesBlue-400 flex items-center justify-center shadow-lg rounded-lg w-full flex-col absolute left-0 top-[125%] p-5 z-10 cursor-default">
+    <div onClick={handleClick} className="max-w-[300px] bg-white dark:bg-yankeesBlue-400 flex items-center justify-center shadow-lg rounded-lg w-full flex-col absolute left-0 top-[125%] p-5 z-10 cursor-default">
       <div className="max-w-[300px] w-full h-full">
         <Controls shownDate={shownDate} onChange={onChangeViewDate} />
 

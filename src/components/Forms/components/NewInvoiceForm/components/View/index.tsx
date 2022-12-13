@@ -13,6 +13,7 @@ import { FormContext } from '../../../../../../context/components/FormProvider';
 
 import dayjs from 'dayjs';
 import { DropdownOptionModel } from '../../../../../../shared/models/DropdownOptionModel';
+import { ModalContext } from '../../../../../../context/components';
 
 const paymentTermsOptions = [
   {
@@ -38,11 +39,17 @@ export default function View({ onSubmit, onDiscard }: ViewDataFormProps) {
     handleSubmit
   } = useContext(FormContext)
 
+  const modalContext = useContext(ModalContext);
+
+  const handleClick = () => {
+    modalContext.setOpened(false);
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full h-full grow flex flex-col pb-10 scrollbar-thin scrollbar-thumb-lavender dark:scrollbar-thumb-yankeesBlue-400 scrollbar-thumb-rounded-full scrollbar-track-none scroll-mr-4">
       <section className="pb-14 px-10 pt-8 md:px-14 lg:px-20">
         <div>
-          <GoBackButton title="Go back to home page" className="w-auto flex items-center justify-start mb-6" />
+          <GoBackButton title="Go back to home page" className="w-auto flex items-center justify-start mb-6" onClick={handleClick} />
         </div>
 
         <Title aria-label="New Invoice" title="Form to create new invoices">New Invoice</Title>

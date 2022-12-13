@@ -53,6 +53,15 @@ module.exports = {
           'date status',
           'price status',
         ],
+        'invoiceDetailsMobile': [
+          'invoiceDate billTo',
+          'paymentDue billTo',
+          'sentTo sentTo',
+        ],
+        'invoiceDetailsTablet': [
+          'invoiceDate billTo sentTo',
+          'paymentDue billTo',
+        ],
         'fieldsFormOnSmartphone': [
           'city postCode',
           'country country'
@@ -67,12 +76,16 @@ module.exports = {
       },
       gridTemplateColumns: {
         'invoiceItem': '1fr 1fr',
+        'invoiceDetailsMobile': '1fr 1fr',
+        'invoiceDetailsTablet': '1fr 1fr 1fr',
         'fieldsFormOnSmartphone': '1fr 1fr',
         'itemListOnSmartphone': '1.2fr 1.2fr 1.1fr 1fr 1fr',
         'itemListOnDesktop': '2fr 0.55fr 1fr 0.55fr 0.5fr'
       },
       gridTemplateRows: {
-        'invoiceItem': `1fr 2fr`,
+        'invoiceItem': '1fr 2fr',
+        'invoiceDetailsMobile': '1fr 1fr 1fr',
+        'invoiceDetailsTablet': '1fr 1fr',
         'fieldsFormOnSmartphone': '1fr 1fr',
         'itemListOnSmartphone': '1fr 1fr',
         'itemListOnDesktop': '1fr',
